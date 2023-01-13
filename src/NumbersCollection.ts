@@ -1,17 +1,21 @@
-export class NumbersCollection {
-    constructor(public collection: number[]){}
+import { Sorter } from "./Sorter";
+
+export class NumbersCollection extends Sorter{
+    constructor(public data: number[]){
+        super();
+    }
 
     get length(): number {
-        return this.collection.length;
+        return this.data.length;
     }
 
     compare(leftIndex: number, rightIndex: number): boolean {
-        return this.collection[rightIndex] < this.collection[leftIndex];
+        return this.data[rightIndex] < this.data[leftIndex];
     }
     
     swap(leftIndex: number, rightIndex: number): void {
-        const aux = this.collection[rightIndex];
-        this.collection[rightIndex] = this.collection[leftIndex];
-        this.collection[leftIndex] = aux;
+        const aux = this.data[rightIndex];
+        this.data[rightIndex] = this.data[leftIndex];
+        this.data[leftIndex] = aux;
     }
 }

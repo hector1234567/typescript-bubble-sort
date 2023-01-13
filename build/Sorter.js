@@ -2,14 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Sorter = void 0;
 class Sorter {
-    constructor(data) {
-        this.data = data;
-    }
     sort() {
-        for (let i = 0; i < this.data.length; i++) {
-            for (let j = 1; j < this.data.length - i; j++) {
-                if (this.data.compare(j - 1, j)) {
-                    this.data.swap(j - 1, j);
+        for (let i = 0; i < this.length; i++) {
+            for (let j = 1; j < this.length - i; j++) {
+                if (this.compare(j - 1, j)) {
+                    this.swap(j - 1, j);
                 }
             }
         }

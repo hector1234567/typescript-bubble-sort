@@ -1,8 +1,11 @@
 import { Node } from "./Node";
-import { Sortable } from "./Sorter";
+import { Sorter } from "./Sorter";
 
-export class LinkedList implements Sortable{
-    constructor(public firstNode: Node) {}
+export class LinkedList extends Sorter{
+    constructor(public firstNode: Node) {
+        super()
+    }
+    
     get length() : number {
         let n = this.firstNode;
         let count = 1;

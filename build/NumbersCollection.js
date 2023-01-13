@@ -1,20 +1,22 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.NumbersCollection = void 0;
-class NumbersCollection {
-    constructor(collection) {
-        this.collection = collection;
+const Sorter_1 = require("./Sorter");
+class NumbersCollection extends Sorter_1.Sorter {
+    constructor(data) {
+        super();
+        this.data = data;
     }
     get length() {
-        return this.collection.length;
+        return this.data.length;
     }
     compare(leftIndex, rightIndex) {
-        return this.collection[rightIndex] < this.collection[leftIndex];
+        return this.data[rightIndex] < this.data[leftIndex];
     }
     swap(leftIndex, rightIndex) {
-        const aux = this.collection[rightIndex];
-        this.collection[rightIndex] = this.collection[leftIndex];
-        this.collection[leftIndex] = aux;
+        const aux = this.data[rightIndex];
+        this.data[rightIndex] = this.data[leftIndex];
+        this.data[leftIndex] = aux;
     }
 }
 exports.NumbersCollection = NumbersCollection;
